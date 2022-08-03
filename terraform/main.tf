@@ -53,3 +53,35 @@ module "Development" {
 
   account_customizations_name = "development"
 }
+
+module "Outest" {
+  source = "./modules/aft-account-request"
+  for_each = var.accounts
+  control_tower_parameters = {
+    AccountEmail              = each.value["AccountEmail"]
+    AccountName               = each.value["AccountName"]
+    ManagedOrganizationalUnit = each.value["ManagedOrganizationalUnit"]
+    SSOUserEmail              = each.value["SSOUserEmail"]
+    SSOUserFirstName          = each.value["SSOUserFirstName"]
+    SSOUserLastName           = each.value["SSOUserLastName"]
+  }
+
+  account_tags = {
+    "ENV" = "OU"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "terraform"
+    change_reason       = "AFT test"
+  }
+
+  custom_fields = {
+    group = "OU"
+  }
+
+  account_customizations_name = each.value["account_customizations_name"]
+}
+
+
+
+
