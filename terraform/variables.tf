@@ -10,6 +10,17 @@ variable "accounts" {
     
   }))
   default = {
+
+							"outest4" = {
+							  AccountEmail     = "cxio.ou.test4@gmail.com"
+							  AccountName = "outest4"
+							  ManagedOrganizationalUnit = "OU-test"
+							  SSOUserEmail = "cxio.ou.test4@gmail.com"
+							  SSOUserFirstName = "ou"
+							  SSOUserLastName = "test4"
+							  account_customizations_name = "ou-test"
+							}
+
     "first" = {
       AccountEmail     = "cxio.ou.test1@gmail.com"
       AccountName = "outest1"
