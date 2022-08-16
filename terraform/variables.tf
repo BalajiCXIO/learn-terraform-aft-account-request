@@ -37,5 +37,14 @@ variable "accounts" {
       SSOUserLastName = "test3"
       account_customizations_name = "ou-test"
     }
+    "forth" = {
+      AccountEmail     = "cxio.ou.test4@gmail.com"
+      AccountName = "outest4"
+      ManagedOrganizationalUnit = "OU-test"
+      SSOUserEmail = "cxio.ou.test4@gmail.com"
+      SSOUserFirstName = "ou"
+      SSOUserLastName = "test4"
+      account_customizations_name = "ou-test"
+    }
   }
 }
