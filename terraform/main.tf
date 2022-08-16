@@ -55,7 +55,7 @@ module "Development" {
 }
 
 module "Outest" {
-  source = "./modules/aft-account-request"
+  source   = "./modules/aft-account-request"
   for_each = var.accounts
   control_tower_parameters = {
     AccountEmail              = each.value["AccountEmail"]
